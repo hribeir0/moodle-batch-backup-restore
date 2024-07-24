@@ -1,3 +1,4 @@
+# connect_database.py
 import mysql.connector
 import sys
 
