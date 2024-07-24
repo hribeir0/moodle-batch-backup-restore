@@ -21,10 +21,12 @@ def connect_to_database():
         sys.exit(1)
 
 def fetch_data_from_database(connection):
+    sql = """SELECT id, intro FROM mdl_label
+        """
     try:
         cursor = connection.cursor()
         # Execute the query
-        cursor.execute("SELECT id, firstname, lastname, email FROM mdl_user")
+        cursor.execute(sql)
 
         # Fetch all rows from the executed query
         rows = cursor.fetchall()

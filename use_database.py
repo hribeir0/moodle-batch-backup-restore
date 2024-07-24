@@ -2,17 +2,22 @@
 import connect_database
 # to not overload moosh requests
 import time
+# Allow to call sh processes
 import subprocess
+# Get cli arguments
+import sys
 
+command = sys.argv[1]
+moosh_arg = 'nada'
 
-def call_moosh(firstname):
+def call_moosh(command, moosh_arg):
     # Define the arguments
     #arg1 = "auth-list"
 
     # Call the bash script with the arguments
-    #result = subprocess.run(['./moosh.sh', arg1], capture_output=True, text=True)
+    result = subprocess.run(['./moosh.sh', command, moosh_arg], capture_output=True, text=True)
     # Command using an argument
-    result = subprocess.run(['echo', firstname], capture_output=True, text=True)
+    #result = subprocess.run(['echo', command], capture_output=True, text=True)
 
     # Check the return code and print the output
     if result.returncode == 0:
@@ -32,13 +37,13 @@ def process_data():
     # Process and print the data
     j = 0
     for row in data:
-        firstname = row[1]
+        intro = row[1]
         # Process each entry
-        print(firstname)
+        print(intro)
         j += 1
         #time.sleep(3)
-        call_moosh(firstname)
-        if (j >= 1): break
+        call_moosh(command, intro)
+        #if (j >= 1): break
 
 
     # Close the database connection
