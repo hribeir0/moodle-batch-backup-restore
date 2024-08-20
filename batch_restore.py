@@ -6,7 +6,7 @@ moodle_path = '/var/www/html/moodle401'
 # Folder where MBZ files are stored
 backups_path = '/var/www/moodledatas/backupsdev/'
 # Moosh Command
-mooshCommand = 'moosh -n course-restore'
+mooshCommand = 'moosh -n course-restore --ignore-warnings'
 
 # Get destiny category from the mbz file
 def extract_number(input_string):
