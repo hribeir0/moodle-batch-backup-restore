@@ -2,9 +2,9 @@ import os, subprocess
 import re
 
 # Moodle destination path
-moodle_path = '/var/www/html/moodle401'
+moodle_path = '/var/www/lms/public_html'
 # Folder where MBZ files are stored
-backups_path = '/var/www/moodledatas/backupsdev/'
+backups_path = '/var/www/lms/moodledata/course_backups/'
 # Moosh Command
 mooshCommand = 'moosh -n course-restore --ignore-warnings'
 

@@ -13,13 +13,13 @@ def secure_filename(input_string):
 
 
 # Save files path
-backup_folder = '/var/www/moodledatas/backupsdev/'
+backup_folder = '/var/www/lms/moodledata/course_backups/' #'/var/www/moodledatas/backupsdev/'
 #Expects a single argument identifying the category we want to process
 category = sys.argv[1]
 file = f'{backup_folder}category{category}.csv'
 
 # Moodle Instalation path
-moodle_path = '/var/www/html/moodledev'
+moodle_path = '/var/www/lms/public_html'
 
 
 
